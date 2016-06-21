@@ -1,0 +1,28 @@
+name: hikey-kernel
+version: 4.4.0
+summary: A hikey kernel built from source
+description: This is the reference kernel from hikey
+type: kernel
+architectures: [ arm64 ]
+
+parts:
+  kernel:
+    plugin: kernel
+    source: .
+    source-branch: snappy_v4.4
+    source-type: git
+    kdefconfig: [defconfig, snappy/generic.config, snappy/security.config, snappy/systemd.config, snappy/snappy.config, snappy/containers.config]
+    kconfigs:
+      - CONFIG_LOCALVERSION="-hikey"
+      - CONFIG_DEBUG_INFO=n
+      - CONFIG_SQUASHFS=m
+    kernel-initrd-modules:
+      - squashfs
+    kernel-image-target: Image
+    kernel-device-trees:
+      - hisilicon/hi6220-hikey
+    build-packages: [bc, kmod, cpio]
+  firmware:
+    plugin: tar-content
+    source: firmware.tar
+    destination: lib/firmware/ti-connectivity
