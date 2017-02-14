@@ -9,7 +9,7 @@ parts:
   kernel:
     plugin: kernel
     source: .
-    source-branch: snappy_v4.4
+    source-branch: snappy_v4.4-release
     source-type: git
     kdefconfig: [defconfig, snappy/generic.config, snappy/security.config, snappy/systemd.config, snappy/snappy.config, snappy/containers.config]
     kconfigs:
