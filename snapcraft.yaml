@@ -25,4 +25,4 @@ parts:
   firmware:
     plugin: tar-content
     source: firmware.tar
-    destination: lib/firmware/ti-connectivity
+    destination: firmware/ti-connectivity
