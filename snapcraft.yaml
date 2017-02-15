@@ -1,4 +1,4 @@
-name: hikey-kernel
+name: hikey-linux
 version: 4.4.0
 summary: A hikey kernel built from source
 description: This is the reference kernel from hikey
